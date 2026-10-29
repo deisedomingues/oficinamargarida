@@ -1,0 +1,637 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f7f1df">
+
+  <title>Oficina Margarida | Bordado personalizado</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* Assinatura da marca */
+    .marca-texto {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.3;
+    }
+
+    .marca-texto small {
+      font-size: 12px;
+      font-weight: 400;
+      color: #69755e;
+      margin-top: 3px;
+    }
+
+    /* WhatsApp flutuante */
+    .whatsapp-flutuante {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 1000;
+      width: 58px;
+      height: 58px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #25d366;
+      color: #fff;
+      border-radius: 50%;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, .18);
+      transition: transform .2s, background .2s;
+      text-decoration: none;
+    }
+
+    .whatsapp-flutuante:hover {
+      background: #1eae54;
+      transform: translateY(-3px);
+    }
+
+    .whatsapp-flutuante svg {
+      width: 31px;
+      height: 31px;
+      fill: currentColor;
+    }
+
+    .whatsapp-flutuante:focus-visible {
+      outline: 3px solid #e6b742;
+      outline-offset: 3px;
+    }
+
+    @media (max-width: 560px) {
+      .whatsapp-flutuante {
+        right: 16px;
+        bottom: 16px;
+        width: 52px;
+        height: 52px;
+      }
+
+      .marca-texto small {
+        font-size: 11px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="barra">
+    <nav class="nav" aria-label="Navegação principal">
+
+      <a class="marca" href="#inicio">
+        <img
+          class="logo"
+          src="img/logo-oficina-margarida.png"
+          alt="Logo da Oficina Margarida"
+        >
+
+        <span class="marca-texto">
+          <span>Oficina Margarida</span>
+          <small>por Deise Domingues</small>
+        </span>
+      </a>
+
+      <a
+        class="instagram"
+        href="https://www.instagram.com/oficinamargarida/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Ver Instagram
+      </a>
+
+    </nav>
+  </header>
+
+  <main id="inicio" class="painel">
+
+    <section class="intro">
+      <h1>Uma história bordada à mão</h1>
+
+      <p>
+    Há momentos que passam diante dos nossos olhos,
+    mas permanecem na história. Momentos que despertam
+    emoções, atravessam gerações e se transformam
+    em lembranças.
+  </p>
+
+  <p class="frase-destaque">
+    <h2>A arte é uma forma de guardar o tempo.</h2>
+  </p>
+    </section>
+
+    <section aria-label="Gráfico e bordado">
+
+      <img
+        class="imagem grafico"
+        src="img/grafico-referencia.jpg"
+        alt="Gráfico que inspirou o bordado"
+      >
+
+      <p class="legenda">
+        Imagem real e detalhada do bordado.
+      </p>
+
+    </section>
+
+    <section class="detalhes">
+  <h2>Seu pedacinho da história</h2>
+
+  <p>
+   <strong>Bordado à mão em algodão cru, entregue em tecido de
+    20 × 20 cm, sem moldura.</strong>
+  </p>
+
+  <p class="sugestao">
+    Uma ideia especial: antes de emoldurar, coloque seus
+    comprovantes de votação junto ao bordado.
+    Uma lembrança para guardar!
+  </p>
+
+  <div class="valores">
+    <p>
+      <strong>R$ 55,00 no Pix</strong> ·
+      R$ 65,00 no cartão em até 2x sem juros
+    </p>
+    <small>Frete calculado posteriormente.</small>
+  </div>
+</section>
+
+    <form id="pedido">
+
+      <h2>Faça sua encomenda</h2>
+
+      <!-- NOME -->
+
+      <div class="campo">
+        <label for="nome">Qual o seu nome?</label>
+
+        <input
+          id="nome"
+          type="text"
+          autocomplete="name"
+          maxlength="100"
+          required
+        >
+      </div>
+
+      <!-- FRASE -->
+
+      <div class="campo">
+        <span class="pergunta">
+          Deseja acrescentar uma frase?
+        </span>
+
+        <div class="opcoes">
+          <label>
+            <input
+              type="radio"
+              name="querFrase"
+              value="Sim"
+              required
+            >
+            Sim
+          </label>
+
+          <label>
+            <input
+              type="radio"
+              name="querFrase"
+              value="Não"
+            >
+            Não
+          </label>
+        </div>
+      </div>
+
+      <div class="campo oculto" id="campoFrase">
+
+        <span class="pergunta">
+          Qual frase deseja?
+        </span>
+
+        <div class="opcoes vertical">
+
+          <label>
+            <input
+              type="radio"
+              name="frase"
+              value="Brilha uma estrela"
+            >
+            Brilha uma estrela
+          </label>
+
+          <label>
+            <input
+              type="radio"
+              name="frase"
+              value="Pro dia nascer feliz"
+            >
+            Pro dia nascer feliz
+          </label>
+
+          <label>
+            <input
+              type="radio"
+              name="frase"
+              value="É TETRA!"
+            >
+            É TETRA!
+          </label>
+
+          <label>
+            <input
+              type="radio"
+              name="frase"
+              value="Outra"
+            >
+            Outra — até 5 palavras
+          </label>
+
+        </div>
+
+        <div id="campoOutra" class="oculto">
+          <label for="outra" class="pergunta">
+            Escreva sua frase
+          </label>
+
+          <input
+            id="outra"
+            type="text"
+            maxlength="100"
+            placeholder="Até 5 palavras"
+          >
+
+          <p id="contador" class="ajuda">
+            0 de 5 palavras
+          </p>
+        </div>
+
+      </div>
+
+      <!-- AVIÃOZINHO -->
+
+      <div class="campo">
+        <span class="pergunta">
+          Deseja incluir o aviãozinho?
+        </span>
+
+        <div class="opcoes">
+          <label>
+            <input
+              type="radio"
+              name="aviao"
+              value="Sim"
+              required
+            >
+            Sim
+          </label>
+
+          <label>
+            <input
+              type="radio"
+              name="aviao"
+              value="Não"
+            >
+            Não
+          </label>
+        </div>
+      </div>
+
+      <!-- EMBALAGEM PARA PRESENTE -->
+
+      <div class="campo">
+        <span class="pergunta">
+          Quer seu bordado embrulhado para presente?
+        </span>
+
+        <div class="opcoes vertical">
+          <label>
+            <input
+              type="radio"
+              name="presente"
+              value="Sim"
+              required
+            >
+            Sim, quero embalagem para presente (+ R$ 10,00)
+          </label>
+
+          <label>
+            <input
+              type="radio"
+              name="presente"
+              value="Não"
+            >
+            Não, obrigado!
+          </label>
+        </div>
+      </div>
+
+      <!-- CEP -->
+
+      <div class="campo">
+        <label for="cep">CEP de entrega</label>
+
+        <input
+          id="cep"
+          type="text"
+          maxlength="9"
+          inputmode="numeric"
+          autocomplete="postal-code"
+          placeholder="00000-000"
+          required
+        >
+
+        <p class="ajuda">
+          O valor do frete será informado depois.
+        </p>
+      </div>
+
+      <!-- PAGAMENTO -->
+
+      <div class="campo">
+        <span class="pergunta">
+          Como prefere pagar?
+        </span>
+
+        <div class="opcoes vertical">
+
+          <label>
+            <input
+              type="radio"
+              name="pagamento"
+              value="Pix"
+              required
+            >
+            Pix — R$ 55,00
+          </label>
+
+          <label>
+            <input
+              type="radio"
+              name="pagamento"
+              value="Cartão de crédito"
+            >
+            Cartão de crédito — R$ 65,00
+            (até 2x sem juros)
+          </label>
+
+        </div>
+      </div>
+
+      <!-- OBSERVAÇÕES -->
+
+      <div class="campo">
+        <label for="observacoes">Observações</label>
+
+        <textarea
+          id="observacoes"
+          rows="3"
+          maxlength="1000"
+          placeholder="Algo mais que gostaria de informar?"
+        ></textarea>
+      </div>
+
+      <!-- RESUMO -->
+
+      <div class="resumo">
+        <strong>Resumo da encomenda</strong>
+
+        <p id="resumoValor" aria-live="polite">
+          Selecione a forma de pagamento.
+        </p>
+
+        <p class="apoio">
+          Frete não incluso.
+        </p>
+      </div>
+
+      <button type="submit">
+        Enviar meu pedido pelo WhatsApp
+      </button>
+
+    </form>
+
+  </main>
+
+  <footer>
+    Oficina Margarida
+  </footer>
+
+  <!-- BOTÃO FLUTUANTE DO WHATSAPP -->
+
+  <a
+    class="whatsapp-flutuante"
+    href="https://wa.me/5511983728274?text=Ol%C3%A1%2C%20Oficina%20Margarida%21"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Falar com a Oficina Margarida pelo WhatsApp"
+    title="Fale conosco pelo WhatsApp"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+    >
+      <path d="M20.52 3.48A11.86 11.86 0 0 0 12.05 0C5.48 0 .13 5.35.12 11.93c0 2.1.55 4.15 1.6 5.96L0 24l6.3-1.65a11.94 11.94 0 0 0 5.73 1.46h.01c6.57 0 11.92-5.35 11.93-11.93a11.85 11.85 0 0 0-3.45-8.4ZM12.04 21.8a9.9 9.9 0 0 1-5.04-1.38l-.36-.21-3.74.98 1-3.65-.24-.38a9.89 9.89 0 0 1-1.52-5.23c0-5.47 4.46-9.93 9.93-9.93a9.86 9.86 0 0 1 7.02 2.91 9.87 9.87 0 0 1 2.9 7.03c0 5.47-4.46 9.92-9.95 9.92Zm5.45-7.43c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.95 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.39-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.61.14-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.49s1.07 2.89 1.22 3.09c.15.2 2.1 3.21 5.09 4.5.71.3 1.27.49 1.7.62.71.23 1.35.2 1.86.12.57-.08 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.13-.27-.2-.57-.35Z"/>
+    </svg>
+  </a>
+
+  <script>
+    const $ = id => document.getElementById(id);
+
+    const escolha = nome =>
+      document.querySelector(
+        `input[name="${nome}"]:checked`
+      )?.value || "";
+
+    const contar = texto =>
+      texto.trim()
+        ? texto.trim().split(/\s+/).length
+        : 0;
+
+    const moeda = valor =>
+      valor.toLocaleString("pt-BR", {
+        style: "currency",
+        currency: "BRL"
+      });
+
+    // Valores dos produtos
+    const PRECO_PIX = 45;
+    const PRECO_CARTAO = 55;
+    const PRECO_PRESENTE = 10;
+
+    // Exibir ou ocultar frases
+    document.querySelectorAll('[name="querFrase"]')
+      .forEach(radio => {
+        radio.addEventListener("change", () => {
+          $("campoFrase").classList.toggle(
+            "oculto",
+            escolha("querFrase") !== "Sim"
+          );
+        });
+      });
+
+    // Exibir campo de frase personalizada
+    document.querySelectorAll('[name="frase"]')
+      .forEach(radio => {
+        radio.addEventListener("change", () => {
+          $("campoOutra").classList.toggle(
+            "oculto",
+            escolha("frase") !== "Outra"
+          );
+        });
+      });
+
+    // Contador de palavras
+    $("outra").addEventListener("input", () => {
+      const total = contar($("outra").value);
+
+      $("contador").textContent =
+        `${total} de 5 palavras`;
+
+      $("contador").style.color =
+        total > 5 ? "#ae3024" : "#64705d";
+    });
+
+    // Formatação do CEP
+    $("cep").addEventListener("input", () => {
+      const numeros = $("cep").value
+        .replace(/\D/g, "")
+        .slice(0, 8);
+
+      $("cep").value = numeros.length > 5
+        ? numeros.slice(0, 5) + "-" + numeros.slice(5)
+        : numeros;
+    });
+
+    // Calcular o total da encomenda
+    function calcularTotal() {
+      const pagamento = escolha("pagamento");
+      const presente = escolha("presente");
+
+      if (!pagamento) return null;
+
+      const valorBordado =
+        pagamento === "Pix"
+          ? PRECO_PIX
+          : PRECO_CARTAO;
+
+      const valorPresente =
+        presente === "Sim"
+          ? PRECO_PRESENTE
+          : 0;
+
+      return {
+        bordado: valorBordado,
+        embalagem: valorPresente,
+        total: valorBordado + valorPresente
+      };
+    }
+
+    // Atualizar resumo automaticamente
+    function atualizarResumo() {
+      const valores = calcularTotal();
+
+      if (!valores) {
+        $("resumoValor").textContent =
+          "Selecione a forma de pagamento.";
+        return;
+      }
+
+      $("resumoValor").textContent =
+        `Bordado: ${moeda(valores.bordado)} | ` +
+        `Embalagem: ${moeda(valores.embalagem)} | ` +
+        `Total: ${moeda(valores.total)} + frete`;
+    }
+
+    document.querySelectorAll(
+      '[name="pagamento"], [name="presente"]'
+    ).forEach(radio => {
+      radio.addEventListener("change", atualizarResumo);
+    });
+
+    // Enviar encomenda pelo WhatsApp
+    $("pedido").addEventListener("submit", event => {
+      event.preventDefault();
+
+      if (!$("pedido").reportValidity()) return;
+
+      const nome = $("nome").value.trim();
+      const querFrase = escolha("querFrase");
+      const aviao = escolha("aviao");
+      const presente = escolha("presente");
+      const pagamento = escolha("pagamento");
+      const cep = $("cep").value.trim();
+      const observacoes =
+        $("observacoes").value.trim();
+
+      let frase = "Sem frase";
+
+      if (querFrase === "Sim") {
+        frase = escolha("frase");
+
+        if (!frase) {
+          alert("Selecione uma frase.");
+          return;
+        }
+
+        if (frase === "Outra") {
+          frase = $("outra").value.trim();
+
+          if (contar(frase) < 1 || contar(frase) > 5) {
+            alert("A frase deve ter de 1 a 5 palavras.");
+            $("outra").focus();
+            return;
+          }
+        }
+      }
+
+      if (!/^\d{5}-\d{3}$/.test(cep)) {
+        alert("Informe um CEP com 8 dígitos.");
+        $("cep").focus();
+        return;
+      }
+
+      const valores = calcularTotal();
+
+      if (!valores) {
+        alert("Escolha a forma de pagamento.");
+        return;
+      }
+
+      const mensagem = `
+Olá, Oficina Margarida!
+Gostaria de fazer uma encomenda.
+
+*Nome:* ${nome}
+*Produto:* Bordado em algodão cru, 20x20 cm
+*Moldura:* Não inclusa
+*Frase:* ${frase}
+*Incluir aviãozinho:* ${aviao}
+*Embalagem para presente:* ${presente}
+*CEP de entrega:* ${cep}
+*Pagamento:* ${pagamento}
+
+*Valor do bordado:* ${moeda(valores.bordado)}
+*Embalagem:* ${moeda(valores.embalagem)}
+*Total (sem frete):* ${moeda(valores.total)}
+*Frete:* A calcular
+
+*Observações:* ${observacoes || "Nenhuma"}
+
+Aguardo a confirmação do frete e os dados para pagamento.
+      `.trim();
+
+      const url =
+        "https://wa.me/5511983728274?text=" +
+        encodeURIComponent(mensagem);
+
+      window.open(url, "_blank", "noopener,noreferrer");
+    });
+  </script>
+
+</body>
+</html>
